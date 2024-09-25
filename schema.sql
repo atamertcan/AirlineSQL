@@ -16,3 +16,11 @@ CREATE TABLE "check_ins" (
     FOREIGN KEY ("flight_id") REFERENCES "flights"("id")
 
 );
+
+CREATE TABLE "airlines" (
+    "id" INTEGER,
+    "name" TEXT NOT NULL,
+    "concourse" TEXT NOT NULL CHECK("concourse" IN ('A','B','C','D','E','F','T')),
+    PRIMARY KEY ("id")
+
+);
