@@ -24,3 +24,16 @@ CREATE TABLE "airlines" (
     PRIMARY KEY ("id")
 
 );
+
+CREATE TABLE "flights" (
+    "id" INTEGER,
+    "flight_number" INTEGER NOT NULL,
+    "airline_id" INTEGER,
+    "from_airport" TEXT NOT NULL,
+    "to_airport" TEXT NOT NULL,
+    "departure_time" NUMERIC NOT NULL,
+    "arrive_time" NUMERIC NOT NULL,
+    PRIMARY KEY ("id"),
+    FOREIGN KEY ("airline_id") REFERENCES "airlines"("id")
+
+);
